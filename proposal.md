@@ -1,6 +1,6 @@
 # COGS_121_Group (Pets!?)
 Team Members
-Ateyib Ahmed
+Ateyib Abdulkadir
 Edward Chen
 Nathanyel Calero
 Siyuan Gao
