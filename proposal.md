@@ -1,8 +1,8 @@
 # COGS_121_Group (Pets!?)
-Team Members
-Ateyib Abdulkadir
-Edward Chen
-Nathanyel Calero
+Team Members:
+Ateyib Abdulkadir,
+Edward Chen,
+Nathanyel Calero,
 Siyuan Gao
 
 Project Proposal (Pet Task Manager?)
