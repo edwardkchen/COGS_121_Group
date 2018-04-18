@@ -4,10 +4,10 @@
 ![Prototype 1](/milestone2/Prototype1.jpg)
 
 ## Prototype 2
-![Prototype 1](https://octodex.github.com/images/yaktocat.png)
+![Prototype 1](/milestone2/Prototype2.jpg)
 
 ## Storyboard 1
-![Storyboard 1](https://octodex.github.com/images/yaktocat.png)
+![Storyboard 1](/milestone2/Storyboard1.jpg)
 
 ## Storyboard 2
-![Storyboard 1](https://octodex.github.com/images/yaktocat.png)
+![Storyboard 1](/milestone2/Storyboard2.jpg)
