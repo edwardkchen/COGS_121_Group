@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cogs_121_group",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ateyib2/COGS_121_Group.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ateyib2/COGS_121_Group/issues"
+  },
+  "homepage": "https://github.com/Ateyib2/COGS_121_Group#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
