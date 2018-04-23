@@ -5,6 +5,12 @@ const app = express();
 const path = require('path');
 var http = require('http');
 
+const PET_NAMES = {
+  Dog: {
+    img: '/code/img/dog.jpg',
+  },
+};
+
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'code')));
 
