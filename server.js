@@ -1,22 +1,41 @@
-//console.log('hello world!');
-
 const express = require('express');
 const app = express();
 const path = require('path');
 var http = require('http');
 
-const PET_NAMES = {
-  Dog: {
-    img: '/code/img/dog.jpg',
+const fakeDB = {
+  John: {
+    pet: 'Dog',
+    img: 'img/dog.jpg',
+    goals: [
+      'Run a mile.',
+      'Read a book',
+      'Go to the gym.',
+    ],
   },
 };
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static(path.join(__dirname, 'code')));
+app.use(express.static('code'));
 
 app.get('/', (req, res) => {
   console.log('Running into index page!');
-  res.sendFile(path.join(__dirname + '/code/index.html'));
+  res.sendFile(path.join(__dirname + '/code/login.html'));
+});
+
+app.get('/home', (req, res) => {
+  console.log('Running into index page!');
+  res.sendFile(path.join(__dirname + '/code/home.html'));
+});
+
+app.get('/users/:username', (req, res) => {
+  const username = req.params.username;
+  const data = fakeDB[username];
+  if (data) {
+    res.send(data);
+  } else {
+    res.send({});
+  }
 });
 
 app.get('/friends', (req, res) => {
@@ -47,7 +66,3 @@ app.get('/feed', (req, res) => {
 app.listen(3000, () => {
   console.log('Server started!');
 });
-
-/*app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server has started");
-});*/
