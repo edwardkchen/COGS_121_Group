@@ -18,7 +18,7 @@ const fakeDB = {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('code'));
 
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
   console.log('Running into index page!');
   res.sendFile(path.join(__dirname + '/code/login.html'));
 });
