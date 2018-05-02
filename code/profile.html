@@ -15,14 +15,22 @@
           URL = window.location.href;
           ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
           USER_ID = URL.split('#')[1].split('=')[2].split('&')[0];
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', 'https://api.fitbit.com/1/user/' + USER_ID + '/profile.json');
-          xhr.setRequestHeader('Authorization', 'Bearer ' + ACCESS_TOKEN);
-          xhr.onload = () => {
-            $('#user_data').text(xhr.response);
-          };
-
-          xhr.send();
+          $.ajax({
+            url: 'https://api.fitbit.com/1/user/' + USER_ID + '/profile.json',
+            type: 'GET',
+            headers: {
+              Authorization: 'Bearer ' + ACCESS_TOKEN,
+            },
+            dataType: 'json',
+            success: (data) => {
+              $('#user_name').text('Name: ' + data.user.fullName);
+              $('#user_age').text('Age: ' + data.user.age);
+              $('#user_gender').text('Gender: ' + data.user.gender);
+              $('#user_height').text('Height: ' + data.user.height);
+              $('#user_weight').text('Weight: ' + data.user.weight);
+              alert('Successfully retrieved user\'s Fitbit data!');
+            },
+          });
         });
       });
     </script>
@@ -36,7 +44,11 @@
       <div class="row">
         <div class="col s12">
           <div class="row">
-            <p id="user_data">
+            <p id="user_name"></p>
+            <p id="user_age"></p>
+            <p id="user_gender"></p>
+            <p id="user_height"></p>
+            <p id="user_weight"></p>
           </div>
           <div class="row center">
             <a href="/connect" class="waves-effect waves-light btn orange">Connect with Fitbit</a>
