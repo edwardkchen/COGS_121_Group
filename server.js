@@ -15,17 +15,32 @@ const fakeDB = {
   },
 };
 
-app.use(express.static(path.join(__dirname, 'public')));
+const OAuth2 = {
+  id: '22CRV9',
+  type: 'token',
+  scope: 'profile',
+  uri: 'http://localhost:3000/profile',
+  prompt: 'login consent',
+};
+
+var encoded = 'https://www.fitbit.com/oauth2/authorize?' +
+  'response_type=' + encodeURIComponent(OAuth2.type) +
+  '&client_id=' + encodeURIComponent(OAuth2.id) +
+  '&redirect_uri=' + encodeURIComponent(OAuth2.uri) +
+  '&scope=' + encodeURIComponent(OAuth2.scope);
+
 app.use(express.static('code'));
 
 app.get('/', (req, res) => {
-  console.log('Running into index page!');
   res.sendFile(path.join(__dirname + '/code/login.html'));
 });
 
 app.get('/home', (req, res) => {
-  console.log('Running into index page!');
   res.sendFile(path.join(__dirname + '/code/home.html'));
+});
+
+app.get('/connect', (req, res) => {
+  res.redirect(encoded);
 });
 
 app.get('/users/:username', (req, res) => {
@@ -39,27 +54,22 @@ app.get('/users/:username', (req, res) => {
 });
 
 app.get('/friends', (req, res) => {
-  console.log('Running into friends page!');
   res.sendFile(path.join(__dirname + '/code/friends.html'));
 });
 
 app.get('/goals', (req, res) => {
-  console.log('Running into goals page!');
   res.sendFile(path.join(__dirname + '/code/goals.html'));
 });
 
 app.get('/house', (req, res) => {
-  console.log('Running into house page!');
   res.sendFile(path.join(__dirname + '/code/house.html'));
 });
 
 app.get('/profile', (req, res) => {
-  console.log('Running into profile page!');
   res.sendFile(path.join(__dirname + '/code/profile.html'));
 });
 
 app.get('/feed', (req, res) => {
-  console.log('Running into feed page!');
   res.sendFile(path.join(__dirname + '/code/feed.html'));
 });
 
