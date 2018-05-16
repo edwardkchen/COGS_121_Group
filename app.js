@@ -51,8 +51,12 @@ app.get('/', (req, res) => {
   res.render('login');
 });
 
-app.post('/login', (req, res) => {
-
+// handling login logic
+app.post("/login", passport.authenticate("local",
+    {
+        successRedirect: "/home",
+        failureRedirect: "/login"
+    }), function(req, res) {
 });
 
 app.get('/register', (req, res) => {
