@@ -26,8 +26,12 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: false,
   }));
-app.use(passport.initialize());
-app.use(passport.session());
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+  passport.use(new LocalStrategy(User.authenticate()));
+  passport.serializeUser(User.serializeUser());
+  passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
@@ -52,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 // handling login logic
-app.post("/login", passport.authenticate("local",
+app.post("/login", passport.authenticate('local',
     {
         successRedirect: "/home",
         failureRedirect: "/login"
