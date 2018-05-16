@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+    <meta charset="utf-8">
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		<script type="text/javascript">
+      $(document).ready(() => {
+        $.ajax({
+          url: '/users/John',
+          type: 'get',
+          dataType: 'json',
+          success: (data) => {
+						data.goals.forEach((g) => {
+							console.log(g);
+							$("#goalsList").append('<li class="collection-item">'+ g +'</li>');
+						});
+          },
+        });
+      });
+    </script>
+    <title>Skeleton_Goals</title>
+ 	</head>
+ 	<body>
+    <div class="container">
+	    <h1>
+	    	Goals
+	    </h1>
+			<ul id="goalsList" class="collection">
+			</ul>
+      <div class="row center">
+        <div class="col s1">
+					<a href="/home" class="waves-effect waves-light btn red">Home</a>
+				</div>
+			</div>
+	</body>
+</html>
