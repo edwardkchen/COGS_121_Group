@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="js/profile.js" charset="utf-8"></script>
+    <link href="/css/home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@5.4.0/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.js"></script>
-    <title>Skeleton Profile</title>
+    <title>Skeleton_Profile</title>
   </head>
   <body>
+    <div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper blue">
+					<a href="#" class="brand-logo center"><h4>PetsApp</h4></a>
+					<ul id="nav-mobile" class="left">
+        		<li><a href="/home"><h5>Home</h5></a></li>
+      		</ul>
+				</div>
+			</nav>
+		</div>
     <div class="container">
       <h1>
         Profile
       </h1>
       <div class="container">
-        <div id="chart1"></div>
+        <div class="white" id="chart1"></div>
         <div class="row center">
           <div class="col s12">
             <a id="get_steps_data" class="waves-effect waves-light btn blue white-text">Get Steps</a>
@@ -64,6 +69,38 @@
         </div>
       </div>
     </div>
+    <footer class="page-footer blue">
+      <div class="container">
+        <div class="row">
+          <div class="col s3 center-align">
+            <a href="/goals">
+              <img class="responsive-img icons footer-icons" src="/imgs/goals-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/feed">
+              <img class="responsive-img icons footer-icons" src="/imgs/feed-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/house" class="center-align">
+              <img class="responsive-img center-align footer-icons" id="store-icon" src="/imgs/store-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/profile" class="center-align">
+              <img class="responsive-img center-align footer-icons" src="/imgs/profile-icon.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="js/profile.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@5.4.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.js"></script>
     <script>
       var chart1 = c3.generate({
         bindto: '#chart1',

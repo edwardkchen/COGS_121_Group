@@ -1,0 +1,51 @@
+body {
+  background-image: url("/imgs/blue-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+
+.icons {
+  max-width: 8vh;
+	max-height: 8vh;
+}
+
+#store-icon {
+  max-height: 8vh;
+  vertical-align: center;
+}
+
+.iconbar {
+  margin-top: 80vh;
+}
+
+.input-field {
+  background-color: #fff;
+}
+
+.navbar-fixed {
+  margin-bottom: 15px;
+}
+
+.card {
+  margin: 0 auto 0 auto;
+  max-width: 35rem;
+  background: none;
+}
+
+#petName {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-footer {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-icons {
+  width: 35px;
+  height: 35px;
+}

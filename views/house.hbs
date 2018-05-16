@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		<link href="/css/home.css" rel="stylesheet">
     <title>Skeleton_House</title>
+
 	</head>
 	<body>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper blue">
+					<a href="#" class="brand-logo center"><h4>PetsApp</h4></a>
+					<ul id="nav-mobile" class="left">
+        		<li><a href="/home"><h5>Home</h5></a></li>
+      		</ul>
+				</div>
+			</nav>
+		</div>
+
     <div class="container">
-      <div class="row"></div>
       <div class="row center">
         <div class="col s1">
-			<a href="/home" class="waves-effect waves-light btn blue">Home</a>
-		<h1>
-   		House
-    	</h1>
+					<h1>
+   					House
+    			</h1>
+				</div>
+			</div>
+		</div>
+
+		<footer class="page-footer blue">
+      <div class="container">
+        <div class="row">
+          <div class="col s3 center-align">
+            <a href="/goals">
+              <img class="responsive-img icons footer-icons" src="/imgs/goals-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/feed">
+              <img class="responsive-img icons footer-icons" src="/imgs/feed-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/house" class="center-align">
+              <img class="responsive-img center-align footer-icons" id="store-icon" src="/imgs/store-icon.png">
+            </a>
+          </div>
+          <div class="col s3 center-align">
+            <a href="/profile" class="center-align">
+              <img class="responsive-img center-align footer-icons" src="/imgs/profile-icon.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+			<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 	</body>
 </html>
