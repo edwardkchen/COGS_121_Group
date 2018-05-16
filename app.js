@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 const fakeDB = {
   John: {
     pet: 'Dog',
-    img: 'img/dog.jpg',
+    img: 'imgs/dog.jpg',
     goals: [
       'Run a mile.',
       'Read a book',

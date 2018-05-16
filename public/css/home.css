@@ -1,0 +1,19 @@
+.home {
+  background-image: url("/imgs/blue-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons {
+  max-width: 8vh;
+	max-height: 8vh;
+}
+
+#store-icon {
+  max-height: 8vh;
+  vertical-align: center;
+}
+
+.iconbar {
+  margin-top: 80vh;
+}

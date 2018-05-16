@@ -18,11 +18,14 @@
         });
       });
     </script>
-    <title>Skeleton</title>
+
+    <link href="/css/home.css" rel="stylesheet">
+
+    <title>Home</title>
   </head>
-  <body>
+  <body class="home">
     <div class="container">
-      <div class="row"></div>
+      <!-- <div class="row"></div>
       <div class="row center">
         <div class="col s4">
           <a href="/goals" class="waves-effect waves-light btn red">Goals</a>
@@ -33,14 +36,14 @@
         <div class="col s4">
           <a href="/" class="waves-effect waves-light btn yellow">Logout</a>
         </div>
-      </div>
+      </div> -->
       <div class="row center">
         <div class="col s12">
           <img id="petImg" alt=""></img>
           <h1 id="petName"></h1>
         </div>
       </div>
-      <div class="row center">
+      <!-- <div class="row center">
         <div class="col s4">
           <a href="/feed" class="waves-effect waves-light btn green">Feed(Store)</a>
         </div>
@@ -50,6 +53,35 @@
         <div class="col s4">
           <a href="/friends" class="waves-effect waves-light btn purple">Friends</a>
         </div>
+      </div> -->
+
+    </div>
+    <div class="container iconbar">
+      <div class="row">
+        <div class="col s3 center-align">
+          <a href="/goal">
+            <img class="responsive-img icons" src="/imgs/goals-icon.png">
+          </a>
+        </div>
+
+        <div class="col s3 center-align">
+          <a href="/feed">
+            <img class="responsive-img icons" src="/imgs/feed-icon.png">
+          </a>
+        </div>
+
+        <div class="col s3 center-align">
+          <a href="/house" class="center-align">
+            <img class="responsive-img center-align" id="store-icon" src="/imgs/store-icon.png">
+          </a>
+        </div>
+
+        <div class="col s3 center-align">
+          <a href="/profile" class="center-align">
+            <img class="responsive-img center-align" src="/imgs/profile-icon.png">
+          </a>
+        </div>
+
       </div>
     </div>
   </body>
