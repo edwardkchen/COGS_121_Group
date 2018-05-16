@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(() => {
-        var URL;
-        var ACCESS_TOKEN;
-        var USER_ID;
-
-        $('#get_info').click(() => {
-          URL = window.location.href;
-          ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
-          USER_ID = URL.split('#')[1].split('=')[2].split('&')[0];
-          $.ajax({
-            url: 'https://api.fitbit.com/1/user/' + USER_ID + '/profile.json',
-            type: 'GET',
-            headers: {
-              Authorization: 'Bearer ' + ACCESS_TOKEN,
-            },
-            dataType: 'json',
-            success: (data) => {
-              $('#user_name').text('Name: ' + data.user.fullName);
-              $('#user_age').text('Age: ' + data.user.age);
-              $('#user_gender').text('Gender: ' + data.user.gender);
-              $('#user_height').text('Height: ' + data.user.height);
-              $('#user_weight').text('Weight: ' + data.user.weight);
-              alert('Successfully retrieved user\'s Fitbit data!');
-            },
-          });
-        });
-      });
-    </script>
-    <title>Skeleton_Profile</title>
+    <script src="js/profile.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@5.4.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.js"></script>
+    <title>Skeleton Profile</title>
   </head>
   <body>
     <div class="container">
       <h1>
         Profile
       </h1>
+      <div class="container">
+        <div id="chart1"></div>
+        <div class="row center">
+          <div class="col s12">
+            <a id="get_steps_data" class="waves-effect waves-light btn blue white-text">Get Steps</a>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col s12">
           <div class="row">
-            <p id="user_name"></p>
-            <p id="user_age"></p>
-            <p id="user_gender"></p>
-            <p id="user_height"></p>
-            <p id="user_weight"></p>
-          </div>
-          <div class="row center">
-            <a href="/connect" class="waves-effect waves-light btn orange">Connect with Fitbit</a>
-          </div>
-          <div class="row center">
-            <a id="get_info" class="waves-effect waves-light btn blue">Get Profile Information</a>
+            <table class="centered responsive">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Height</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="user_name">-</td>
+                  <td id="user_age">-</td>
+                  <td id="user_gender">-</td>
+                  <td id="user_height">-</td>
+                  <td id="user_weight">-</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
       <div class="row center">
-        <div class="col s3">
+        <div class="col s12 m4 orange">
           <a href="/home" class="waves-effect waves-light btn orange">Home</a>
+        </div>
+        <div class="col s12 m4 pink">
+          <a href="/connect" class="waves-effect waves-light btn pink">Connect with Fitbit</a>
+        </div>
+        <div class="col s12 m4 blue">
+          <a id="get_profile_info" class="waves-effect waves-light btn blue white-text">Get Profile Information</a>
         </div>
       </div>
     </div>
+    <script>
+      var chart1 = c3.generate({
+        bindto: '#chart1',
+        data: {
+          columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25],
+          ],
+        },
+      });
+
+      $('#get_activity_data').click(function () {
+        chart1.show(['data1']);
+      });
+    </script>
   </body>
 </html>

@@ -27,21 +27,21 @@ app.use(expressSession({
     saveUninitialized: false,
   }));
 
-  app.use(passport.initialize());
-  app.use(passport.session());
-  passport.use(new LocalStrategy(User.authenticate()));
-  passport.serializeUser(User.serializeUser());
-  passport.deserializeUser(User.deserializeUser());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
 });
 
 const fakeDB = {
   John: {
     pet: 'Dog',
-    img: 'img/dog.jpg',
+    img: 'imgs/dog.jpg',
     goals: [
       'Run a mile.',
       'Read a book',
@@ -50,21 +50,35 @@ const fakeDB = {
   },
 };
 
-app.get('/login', (req, res) => {
-  res.render('login');
-})
+const OAuth2 = {
+  id: '22CRV9',
+  type: 'token',
+  scope: 'profile activity weight',
+  uri: 'http://localhost:3000/profile',
+  prompt: 'login consent',
+};
+
+var encoded = 'https://www.fitbit.com/oauth2/authorize?' +
+  'response_type=' + encodeURIComponent(OAuth2.type) +
+  '&client_id=' + encodeURIComponent(OAuth2.id) +
+  '&redirect_uri=' + encodeURIComponent(OAuth2.uri) +
+  '&scope=' + encodeURIComponent(OAuth2.scope);
 
 app.get('/', (req, res) => {
   console.log('Running into login page!');
   res.render('login');
 });
 
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
 // handling login logic
 app.post('/login', passport.authenticate('local',
-    {
-        successRedirect: "/home",
-        failureRedirect: "/login"
-    }), function(req, res) {
+  {
+    successRedirect: '/home',
+    failureRedirect: '/login',
+  }), function (req, res) {
 });
 
 app.get('/register', (req, res) => {
@@ -73,20 +87,25 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
   const newUser = new User({ username: req.body.username });
-    User.register(newUser, req.body.password, (err, user) => {
-        if(err) {
-            console.log(err);
-            return res.render('register');
-        }
-        passport.authenticate('local')(req, res, function() {
-            res.redirect('/home');
-        });
+  User.register(newUser, req.body.password, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.render('register');
+    }
+
+    passport.authenticate('local')(req, res, function () {
+      res.redirect('/home');
     });
+  });
 });
 
 app.get('/home', (req, res) => {
   console.log('Running into home page!');
   res.render('home');
+});
+
+app.get('/connect', (req, res) => {
+  res.redirect(encoded);
 });
 
 app.get('/users/:username', (req, res) => {
@@ -123,7 +142,6 @@ app.get('/feed', (req, res) => {
   console.log('Running into feed page!');
   res.render('feed');
 });
-
 
 app.listen(3000, () => {
   console.log('Server started!');
