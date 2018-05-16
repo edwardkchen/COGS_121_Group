@@ -50,13 +50,17 @@ const fakeDB = {
   },
 };
 
+app.get('/login', (req, res) => {
+  res.render('login');
+})
+
 app.get('/', (req, res) => {
   console.log('Running into login page!');
   res.render('login');
 });
 
 // handling login logic
-app.post("/login", passport.authenticate('local',
+app.post('/login', passport.authenticate('local',
     {
         successRedirect: "/home",
         failureRedirect: "/login"
