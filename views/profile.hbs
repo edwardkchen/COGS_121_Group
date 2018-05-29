@@ -20,14 +20,15 @@
 			</nav>
 		</div>
     <div class="container">
-      <h1>
+      <h1 class="white-text">
         Profile
       </h1>
       <div class="container">
         <div class="white" id="chart1"></div>
+        <br></br>
         <div class="row center">
           <div class="col s12">
-            <a id="get_steps_data" class="waves-effect waves-light btn blue white-text">Get Steps</a>
+            <a id="get_steps_data" class="waves-effect waves-light btn blue white-text">Show Steps</a>
           </div>
         </div>
       </div>
@@ -58,13 +59,10 @@
         </div>
       </div>
       <div class="row center">
-        <div class="col s12 m4 orange">
-          <a href="/home" class="waves-effect waves-light btn orange">Home</a>
-        </div>
-        <div class="col s12 m4 pink">
+        <div class="col s12 m6">
           <a href="/connect" class="waves-effect waves-light btn pink">Connect with Fitbit</a>
         </div>
-        <div class="col s12 m4 blue">
+        <div class="col s12 m6">
           <a id="get_profile_info" class="waves-effect waves-light btn blue white-text">Get Profile Information</a>
         </div>
       </div>
@@ -95,26 +93,15 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="js/profile.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@5.4.0/dist/d3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/c3@0.6.0/c3.min.js"></script>
+    <script src="js/profile.js" charset="utf-8"></script>
     <script>
-      var chart1 = c3.generate({
-        bindto: '#chart1',
-        data: {
-          columns: [
-            ['data1', 30, 200, 100, 400, 150, 250],
-            ['data2', 50, 20, 10, 40, 15, 25],
-          ],
-        },
-      });
 
-      $('#get_activity_data').click(function () {
-        chart1.show(['data1']);
-      });
     </script>
   </body>
 </html>
