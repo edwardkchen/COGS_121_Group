@@ -1,9 +1,13 @@
 function smallfeed() {
-document.getElementById("myProgress").value +="10"; 
+document.getElementById("Hunger").value += 25; 
+console.log(Hunger);
+
 }
 function mediumfeed() {
-document.getElementById("myProgress").value += "25";
+document.getElementById("Hunger").value += 50;
+console.log(Hunger);
 }
 function largefeed() {
-document.getElementById("myProgress").value += "33";
+document.getElementById("Hunger").value += 75;
+console.log(Hunger);
 }
