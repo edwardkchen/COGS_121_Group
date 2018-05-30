@@ -82,6 +82,7 @@ body {
   max-height: 70px;
 }
 
+<<<<<<< HEAD
 .pet {
   margin-top: 40%;
   width = 70vw;
@@ -90,7 +91,9 @@ body {
 <<<<<<< HEAD
 =======
 #myProgress {
+=======
+#Hunger {
+>>>>>>> e6369fdb49487789c28d4d6b4fbb16bd5bd240f8
   width: 75%;
   background-color: #ddd;
->>>>>>> a7db49e2bf3ab4c7ed6256f53d2e39e8f7cc7b32
 }
