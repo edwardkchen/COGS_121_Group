@@ -4,13 +4,9 @@ $(document).ready(() => {
   var ACCESS_TOKEN;
   var USER_ID;
 
-  window.onload = () => {
-    if (!window.location.hash) {
-      window.location.replace('/connect');
-    }
-  };
-
-  $('#get_profile_info').click(() => {
+  if (!window.location.hash) {
+    window.location.replace('/connect');
+  } else {
     URL = window.location.href;
     ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
     USER_ID = URL.split('#')[1].split('=')[2].split('&')[0];
@@ -22,7 +18,6 @@ $(document).ready(() => {
       },
       dataType: 'json',
       success: (data) => {
-        console.log(data);
         $('#user_name').text(data.user.fullName);
         $('#user_age').text(data.user.age);
         $('#user_gender').text(data.user.gender);
@@ -30,34 +25,32 @@ $(document).ready(() => {
         $('#user_weight').text(data.user.weight + ' kg');
       },
     });
-  });
 
-  var chart1 = c3.generate({
-    bindto: '#chart1',
-    padding: {
-      right: 30,
-    },
-    data: {
-      x: 'dates',
-      columns: [
-        ['dates'],
-        ['steps'],
-      ],
-    },
-    axis: {
-      x: {
-        type: 'timeseries',
-        tick: {
-          format: '%m/%d/%y',
+    var chart1 = c3.generate({
+      bindto: '#chart1',
+      padding: {
+        right: 30,
+      },
+      data: {
+        x: 'dates',
+        columns: [
+          ['dates'],
+          ['steps'],
+        ],
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%m/%d/%y',
+          },
         },
       },
-    },
-    legend: {
-      show: false,
-    },
-  });
+      legend: {
+        show: false,
+      },
+    });
 
-  $('#get_steps_data').click(() => {
     $.ajax({
       url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1w.json',
       type: 'GET',
@@ -81,5 +74,5 @@ $(document).ready(() => {
         chart1.show(['steps']);
       },
     });
-  });
+  }
 });
