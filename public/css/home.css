@@ -76,3 +76,8 @@ body {
 #loginButton {
   margin-right: 20px;
 }
+
+#myProgress {
+  width: 75%;
+  background-color: #ddd;
+}
