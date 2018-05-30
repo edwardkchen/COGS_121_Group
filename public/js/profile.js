@@ -5,7 +5,13 @@ $(document).ready(() => {
   var USER_ID;
 
   if (!window.location.hash) {
-    window.location.replace('/connect');
+    var r = confirm('Connect to Fitbit.com?\n' +
+      'Click OK to continue\nOr cancel to go back to home page.');
+    if (r == true) {
+      window.location.replace('/connect');
+    } else {
+      window.location.replace('/home');
+    }
   } else {
     URL = window.location.href;
     ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
