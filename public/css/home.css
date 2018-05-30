@@ -49,3 +49,9 @@ body {
   width: 35px;
   height: 35px;
 }
+
+@media screen and (max-width: 991px){
+  .button-stack-margin {
+    margin-bottom: 4px;
+  }
+}

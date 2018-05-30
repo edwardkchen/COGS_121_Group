@@ -4,6 +4,12 @@ $(document).ready(() => {
   var ACCESS_TOKEN;
   var USER_ID;
 
+  window.onload = () => {
+    if (!window.location.hash) {
+      window.location.replace('/connect');
+    }
+  };
+
   $('#get_profile_info').click(() => {
     URL = window.location.href;
     ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
@@ -28,6 +34,9 @@ $(document).ready(() => {
 
   var chart1 = c3.generate({
     bindto: '#chart1',
+    padding: {
+      right: 30,
+    },
     data: {
       x: 'dates',
       columns: [

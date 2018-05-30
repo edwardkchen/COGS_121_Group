@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="/css/home.css" rel="stylesheet">
-    <title>Home</title>
+    <title>App - Home</title>
   </head>
   <body class="home">
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper blue">
-          <a href="#" class="brand-logo center"><h4>PetsApp</h4></a>
-          <a href="/" class="waves-effect waves-light btn yellow">Logout</a>
+          <a href="#" class="brand-logo center">PetsApp</a>
+          <ul id="nav-mobile" class="left">
+            <li><a href="/">Logout</a></li>
+          </ul>
         </div>
       </nav>
     </div>
@@ -58,21 +60,20 @@
       </div>
     </footer>
 
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script type="text/javascript"></script>
-  <script>
-  $(document).ready(() => {
-  $.ajax({
-  url: '/users/John',
-  type: 'get',
-  dataType: 'json',
-  success: (data) => {
-  $('#petImg').attr('src', data.img);
-  $('#petName').text(data.pet);
-  },
-  });
-  });
-  </script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $.ajax({
+          url: '/users/John',
+          type: 'get',
+          dataType: 'json',
+          success: (data) => {
+            $('#petImg').attr('src', data.img);
+            $('#petName').text(data.pet);
+          },
+        });
+      });
+    </script>
   </body>
 </html>

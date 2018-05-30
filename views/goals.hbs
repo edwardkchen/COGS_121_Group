@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<title>Skeleton_Goals</title>
     <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 		<link href="/css/home.css" rel="stylesheet">
-
+		<title>App - Goals</title>
  	</head>
  	<body>
 		<div class="navbar-fixed">
@@ -14,20 +13,16 @@
 				<div class="nav-wrapper blue">
 					<a href="#" class="brand-logo center"><h4>PetsApp</h4></a>
 					<ul id="nav-mobile" class="left">
-        		<li><a href="/home"><h5>Home</h5></a></li>
+        		<li><a href="/home">Home</a></li>
       		</ul>
 				</div>
 			</nav>
 		</div>
-
     <div class="container">
-	    <h1>
-	    	Goals
-	    </h1>
+	    <h3>Goals</h3>
 			<ul id="goalsList" class="collection">
 			</ul>
 		</div>
-		
 		<footer class="page-footer blue">
       <div class="container">
         <div class="row">
@@ -54,23 +49,22 @@
         </div>
       </div>
     </footer>
-			<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-			<script type="text/javascript">
-	      $(document).ready(() => {
-	        $.ajax({
-	          url: '/users/John',
-	          type: 'get',
-	          dataType: 'json',
-	          success: (data) => {
-							data.goals.forEach((g) => {
-								console.log(g);
-								$("#goalsList").append('<li class="collection-item">'+ g +'</li>');
-							});
-	          },
-	        });
-	      });
-	    </script>
-
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		<script type="text/javascript">
+      $(document).ready(() => {
+        $.ajax({
+          url: '/users/John',
+          type: 'get',
+          dataType: 'json',
+          success: (data) => {
+						data.goals.forEach((g) => {
+							console.log(g);
+							$("#goalsList").append('<li class="collection-item">'+ g +'</li>');
+						});
+          },
+        });
+      });
+    </script>
 	</body>
 </html>

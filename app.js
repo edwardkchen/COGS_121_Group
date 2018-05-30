@@ -1,3 +1,4 @@
+/*jshint esversion: 6*/
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -12,6 +13,9 @@ const User = require('./models/user');
 const app = express();
 
 const mongoURI = 'mongodb://nesa:nesaatcogs121@ds031632.mlab.com:31632/pets_app';
+
+var connected = false;
+
 // Create mongo connection
 mongoose.connect(mongoURI);
 
