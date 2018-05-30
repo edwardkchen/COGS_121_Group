@@ -77,16 +77,18 @@ body {
   margin-right: 20px;
 }
 
+.pet {
+  margin-top: 40%;
+  width = 70vw;
+}
+
 .food {
   /* max-width: 70px; */
   max-height: 70px;
 }
 
 <<<<<<< HEAD
-.pet {
-  margin-top: 40%;
-  width = 70vw;
-}
+
 
 <<<<<<< HEAD
 =======
