@@ -91,6 +91,8 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
   const newUser = new User({ username: req.body.username });
+  console.log(newUser);
+  console.log(req.body.password);
   User.register(newUser, req.body.password, (err, user) => {
     if (err) {
       console.log(err);
@@ -139,7 +141,11 @@ app.get('/house', (req, res) => {
 
 app.get('/profile', (req, res) => {
   console.log('Running into profile page!');
-  res.render('profile');
+  if (req.user.token) {
+    return res.render('profile');
+  } else {
+    res.redirect('/connect');
+  }
 });
 
 app.get('/feed', (req, res) => {
@@ -147,15 +153,22 @@ app.get('/feed', (req, res) => {
   res.render('feed');
 });
 
-app.post('/:token', (req, res) => {
-  const token = req.params.token;
-  console.log(token);
+app.post('/token', (req, res) => {
+  const token = req.body.token;
+  User.findById(req.user._id, (err, user) => {
+    if (err) {
+      res.redirect('back');
+    } else {
+      user.token = token;
+      user.save();
+    }
+  });
 });
 
 //logout route
 app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/login');
+  req.logout();
+  res.redirect('/login');
 });
 
 app.listen(3000, () => {
