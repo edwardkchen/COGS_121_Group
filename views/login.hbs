@@ -5,33 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="/css/home.css" rel="stylesheet">
-    <title>App - Log-in</title>
+    <title>Log-in</title>
   </head>
   <body>
     <div class="navbar-fixed">
-			<nav>
-				<div class="nav-wrapper blue">
-					<a href="#" class="brand-logo center">PetsApp</a>
+			<nav class="transparent">
+				<div class="nav-wrapper transparent">
+					<a href="#" class="brand-logo center grey-text">PetsApp</a>
 				</div>
 			</nav>
 		</div>
     <div class="container">
-      <h3>Login</h3>
+      <div class="card form-box white">
+        <div class="row center">
+          <h3>Login</h3>
+        </div>
+        <form action='/login' method="POST">
+          <div class="input-field">
+            <input id="usernameBox" type="text" placeholder="Username" name="username" class="validate"></input>
+            <label for="usernameBox"></label>
+          </div>
+          <div class="input-field">
+            <input id="passwordBox" type="password" placeholder="Password" name="password" class="validate"></input>
+            <label for="passwordBox"></label>
+          </div>
+        </form>
+        <div class="row center">
+          <button id="loginButton" type="submit" class="waves-effect waves-light btn blue">Login</button>
+          <a href="/register">Register</a>
+        </div>
+      </div>
+      <!--
       <div class="row center">
         <form action="/login" method="POST">
           <div class="input-field col s12">
             <input id="usernameBox" type="text" placeholder="Username" name="username" class="validate"></input>
             <label for="usernameBox"></label>
-            <input id="passwordBox" type="text" placeholder="Password" name="password" class="validate"></input>
+            <input id="passwordBox" type="password" placeholder="Password" name="password" class="validate"></input>
             <label for="passwordBox"></label>
           </div>
           <button id="loginButton" type="submit" class="waves-effect waves-light btn">Login</button>
         </form>
       </div>
+      -->
     </div>
-    <div class="row center">
-      <a href="/register">Or Register</a>
-    <div>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   </body>
