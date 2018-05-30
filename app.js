@@ -147,6 +147,17 @@ app.get('/feed', (req, res) => {
   res.render('feed');
 });
 
+app.post('/:token', (req, res) => {
+  const token = req.params.token;
+  console.log(token);
+});
+
+//logout route
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
+});
+
 app.listen(3000, () => {
   console.log('Server started!');
 });
