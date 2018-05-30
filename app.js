@@ -141,9 +141,10 @@ app.get('/house', (req, res) => {
 
 app.get('/profile', (req, res) => {
   console.log('Running into profile page!');
-  if (req.user.token) {
+  if (!req.session.loggedIn) {
     return res.render('profile');
   } else {
+    req.session.loggedIn = true;
     res.redirect('/connect');
   }
 });
