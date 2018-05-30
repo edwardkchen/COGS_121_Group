@@ -12,6 +12,6 @@ Our user's Fitbit data is displayed to the user in a table format, and their ste
 
 ![Screenshot 3](/milestone6/3.png)
 
-![Screenshot 4](/milestone6/4.png)
+![Screenshot 4](/milestone6/4_1.png)
 
 ![Screenshot 5](/milestone6/5.png)
