@@ -77,7 +77,13 @@ body {
   margin-right: 20px;
 }
 
+<<<<<<< HEAD
 .food {
   /* max-width: 70px; */
   max-height: 70px;
+=======
+#myProgress {
+  width: 75%;
+  background-color: #ddd;
+>>>>>>> a7db49e2bf3ab4c7ed6256f53d2e39e8f7cc7b32
 }
