@@ -47,9 +47,9 @@ const fakeDB = {
     pet: 'Dog',
     img: 'imgs/dog.jpg',
     goals: [
-      'Run a mile.',
-      'Read a book',
-      'Go to the gym.',
+      'Run 2 miles.',
+      'Burn 500 calories',
+      'Weigh 150 lbs',
     ],
   },
 };
