@@ -53,7 +53,7 @@ $(document).ready(() => {
         x: {
           type: 'timeseries',
           tick: {
-            format: '%m/%d/%y',
+            format: '%m/%d',
           },
         },
       },
