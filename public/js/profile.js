@@ -29,11 +29,8 @@ $(document).ready(() => {
       },
       dataType: 'json',
       success: (data) => {
-        $('#user_name').text(data.user.fullName);
-        $('#user_age').text(data.user.age);
-        $('#user_gender').text(data.user.gender);
-        $('#user_height').text(data.user.height.toFixed() + '\"');
-        $('#user_weight').text(data.user.weight + ' kg');
+        $('#user_name').text('Hi, ' + data.user.firstName + '!');
+        $('#user_desc').text('Here\'s your step data from the past week.');
       },
     });
 

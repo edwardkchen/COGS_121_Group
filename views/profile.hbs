@@ -15,9 +15,11 @@
 				<div class="nav-wrapper transparent">
 					<a href="#" class="brand-logo center grey-text">PetsApp</a>
 					<ul id="nav-mobile" class="left">
-        		<li><a href="/home">
-  <img class="responsive-img icons header-icons" src="/imgs/home.png">
-</a></li>
+        		<li>
+              <a href="/home">
+                <i class="fas fa-home grey-text"></i>
+              </a>
+            </li>
       		</ul>
 				</div>
 			</nav>
@@ -27,61 +29,42 @@
       <div class="row">
         <div class="col s12">
           <div class="row">
-            <table class="centered responsive">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Height</th>
-                  <th>Weight</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td id="user_name">-</td>
-                  <td id="user_age">-</td>
-                  <td id="user_gender">-</td>
-                  <td id="user_height">-</td>
-                  <td id="user_weight">-</td>
-                </tr>
-              </tbody>
-            </table>
+            <h5 id="user_name"></h5>
+            <p id="user_desc"></p>
           </div>
+          <div class="white" id="chart1"></div>
         </div>
       </div>
-      <div class="white" id="chart1"></div>
     </div>
     <footer class="page-footer transparent">
       <div class="container">
         <div class="row">
           <div class="col s3 center-align">
             <a href="/goals">
-              <!--
-              <img class="responsive-img icons footer-icons" src="/imgs/goals-icon.png">
-              -->
-              <i class="fas fa-list fa-2x black-text"></i>
+              <i id="icon_goals" class="fas fa-list fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Goals</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/feed">
-              <!--
-              <img class="responsive-img icons footer-icons" src="/imgs/feed-icon.png">
-              -->
-              <i class="fas fa-utensils fa-2x black-text"></i>
+              <i class="fas fa-utensils fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Feed</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/house" class="center-align">
-              <!--
-              <img class="responsive-img center-align footer-icons" id="store-icon" src="/imgs/store-icon.png">
-              -->
-              <i class="fas fa-home fa-2x black-text"></i>
+              <i class="fas fa-shopping-cart fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Store</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/profile" class="center-align">
-              <img class="responsive-img center-align footer-icons" src="/imgs/cat-profile.png">
+              <i class="fas fa-user fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Profile</span>
             </a>
           </div>
         </div>

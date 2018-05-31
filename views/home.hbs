@@ -12,7 +12,7 @@
     <div class="navbar-fixed">
       <nav class="transparent">
         <div class="nav-wrapper transparent">
-          <a href="#" class="brand-logo center grey-text">PetsApp({{user.total_points}})</a>
+          <a href="#" class="brand-logo center grey-text">PetsApp</a>
           <ul id="nav-mobile" class="left">
             <li><a class="grey-text" href="/logout">Logout</a></li>
           </ul>
@@ -20,56 +20,48 @@
       </nav>
     </div>
     <div class="container">
-      <div class="center">
+      <div class="row center">
         <div class="col s12">
-          <div class="center">
-            <div class="valign-wrapper">
-              <img id="petImg" class="responsive-img pet" alt=""></img>
-            </div>
-            <!-- <div>
-              <h4 id="petName"></h4>
-            </div> -->
+          <div class="valign-wrapper">
+            <img id="petImg" class="responsive-img" alt=""></img>
           </div>
         </div>
       </div>
     </div>
-
     <footer class="page-footer transparent">
       <div class="container">
         <div class="row">
           <div class="col s3 center-align">
             <a href="/goals">
-              <!--
-              <img class="responsive-img icons footer-icons" src="/imgs/goals-icon.png">
-              -->
-              <i class="fas fa-list fa-2x black-text"></i>
+              <i id="icon_goals" class="fas fa-list fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Goals</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/feed">
-              <!--
-              <img class="responsive-img icons footer-icons" src="/imgs/feed-icon.png">
-              -->
-              <i class="fas fa-utensils fa-2x black-text"></i>
+              <i class="fas fa-utensils fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Feed</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/house" class="center-align">
-              <!--
-              <img class="responsive-img center-align footer-icons" id="store-icon" src="/imgs/store-icon.png">
-              -->
-              <i class="fas fa-home fa-2x black-text"></i>
+              <i class="fas fa-shopping-cart fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Store</span>
             </a>
           </div>
           <div class="col s3 center-align">
             <a href="/profile" class="center-align">
-              <img class="responsive-img center-align footer-icons" src="/imgs/cat-profile.png">
+              <i class="fas fa-user fa-2x grey-text"></i>
+              </br>
+              <span class="grey-text">Profile</span>
             </a>
           </div>
         </div>
       </div>
     </footer>
-
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script>

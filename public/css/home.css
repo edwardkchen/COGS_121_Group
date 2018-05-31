@@ -1,7 +1,7 @@
 body {
   background-image: url("/imgs/paws-bg.jpg");
   background-repeat: repeat;
-  background-size: cover;
+  background-position: top center;
   margin-bottom: 100px;
 }
 
