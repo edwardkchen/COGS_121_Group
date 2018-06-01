@@ -30,7 +30,7 @@ $(document).ready(() => {
       dataType: 'json',
       success: (data) => {
         $('#user_name').text('Hi, ' + data.user.firstName + '!');
-        $('#user_desc').text('Here\'s your step data from the past week.');
+        $('#user_desc').text('Here\'s your Fitbit data from the past week.');
       },
     });
 
@@ -79,7 +79,54 @@ $(document).ready(() => {
             steps,
           ],
         });
-        chart1.show(['steps']);
+      },
+    });
+
+    var chart2 = c3.generate({
+      bindto: '#chart2',
+      padding: {
+        right: 30,
+      },
+      data: {
+        x: 'dates',
+        columns: [
+          ['dates'],
+          ['calories'],
+        ],
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%m/%d',
+          },
+        },
+      },
+      legend: {
+        show: false,
+      },
+    });
+
+    $.ajax({
+      url: 'https://api.fitbit.com/1/user/-/activities/calories/date/today/1w.json',
+      type: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + ACCESS_TOKEN,
+      },
+      dataType: 'json',
+      success: (data) => {
+        var calories = ['calories'];
+        var dates = ['dates'];
+        data['activities-calories'].forEach((e) => {
+          calories.push(parseInt(e.value));
+          dates.push(e.dateTime);
+        });
+        chart2.load({
+          columns: [
+            dates,
+            calories,
+          ],
+        });
       },
     });
   }
