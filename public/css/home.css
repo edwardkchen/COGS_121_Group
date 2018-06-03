@@ -73,7 +73,9 @@ body {
 }
 
 .valign-wrapper {
-  height: 70vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(30%);
 }
 
 .food {

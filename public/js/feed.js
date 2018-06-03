@@ -1,14 +1,30 @@
+var points;
+
+$(document).ready(() => {
+  points = 5000;
+  document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+});
+
 function smallfeed() {
-  document.getElementById('Hunger').value += 5;
-  console.log(Hunger.value);
+  if (points >= 300 & document.getElementById('Hunger').value < 100) {
+    document.getElementById('Hunger').value += 5;
+    points -= 300;
+    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  }
 }
 
 function mediumfeed() {
-  document.getElementById('Hunger').value += 10;
-  console.log(Hunger.value);
+  if (points >= 500 & document.getElementById('Hunger').value < 100) {
+    document.getElementById('Hunger').value += 10;
+    points -= 500;
+    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  }
 }
 
 function largefeed() {
-  document.getElementById('Hunger').value += 25;
-  console.log(Hunger.value);
+  if (points >= 700 & document.getElementById('Hunger').value < 100) {
+    document.getElementById('Hunger').value += 25;
+    points -= 700;
+    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  }
 }
