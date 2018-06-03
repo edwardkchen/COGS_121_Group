@@ -139,11 +139,6 @@ app.get('/help', (req, res) => {
   res.render('help');
 });
 
-app.get('/house', (req, res) => {
-  console.log('Running into house page!');
-  res.render('house');
-});
-
 app.get('/profile', (req, res) => {
   console.log('Running into profile page!');
   if (!req.session.loggedIn) {

@@ -5,9 +5,9 @@ $(document).ready(() => {
   var USER_ID;
 
   if (!window.location.hash) {
-    var r = confirm('Connect to Fitbit.com?\n' +
-      'Click OK to continue\nCancel to go back to home page.');
-    if (r == true) {
+    //var r = confirm('Connect to Fitbit.com?\n' +
+    //  'Click OK to continue\nCancel to go back to home page.');
+    if (true) {
       window.location.replace('/connect');
     } else {
       window.location.replace('/home');
@@ -16,11 +16,11 @@ $(document).ready(() => {
     URL = window.location.href;
     ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
     USER_ID = URL.split('#')[1].split('=')[2].split('&')[0];
-
+    /*
     $.post('/token', {
       token: ACCESS_TOKEN,
     });
-
+    */
     $.ajax({
       url: 'https://api.fitbit.com/1/user/' + USER_ID + '/profile.json',
       type: 'GET',
