@@ -72,25 +72,11 @@ body {
   margin-right: 20px;
 }
 
-.pet {
-  margin-top: 50%;
-  width = 100vw;
-  vertical-align: center;
-
-}
-
 .valign-wrapper {
-  height: 400px;
-}
-
-#petImg {
-  margin-left: auto;
-  margin-right: auto;
-  width: 40vw;
+  height: 70vh;
 }
 
 .food {
-  /* max-width: 70px; */
   max-height: 70px;
 }
 

@@ -149,11 +149,6 @@ app.get('/profile', (req, res) => {
   }
 });
 
-app.get('/feed', (req, res) => {
-  console.log('Running into feed page!');
-  res.render('feed');
-});
-
 app.post('/token', (req, res) => {
   const token = req.body.token;
   User.findById(req.user._id, (err, user) => {

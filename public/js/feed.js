@@ -1,13 +1,14 @@
 function smallfeed() {
-document.getElementById("Hunger").value += 25; 
-console.log(Hunger);
+  document.getElementById('Hunger').value += 5;
+  console.log(Hunger.value);
+}
 
-}
 function mediumfeed() {
-document.getElementById("Hunger").value += 50;
-console.log(Hunger);
+  document.getElementById('Hunger').value += 10;
+  console.log(Hunger.value);
 }
+
 function largefeed() {
-document.getElementById("Hunger").value += 75;
-console.log(Hunger);
+  document.getElementById('Hunger').value += 25;
+  console.log(Hunger.value);
 }
