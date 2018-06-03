@@ -134,6 +134,11 @@ app.get('/goals', (req, res) => {
   res.render('goals');
 });
 
+app.get('/help', (req, res) => {
+  console.log('Running into goals page!');
+  res.render('help');
+});
+
 app.get('/house', (req, res) => {
   console.log('Running into house page!');
   res.render('house');
