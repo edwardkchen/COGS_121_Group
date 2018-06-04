@@ -26,7 +26,7 @@
 * Icon selection
 * Theme CSS consistency
 
-##Source Code
+## Source Code
 
 ### app.js //Server setup, handlebar integration
 
