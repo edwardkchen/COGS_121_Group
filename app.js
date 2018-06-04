@@ -226,10 +226,6 @@ app.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-// app.listen(3000, () => {
-//   console.log('Server started!');
-// });
-
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log('Server has started');
+app.listen(3000, () => {
+  console.log('Server started!');
 });
