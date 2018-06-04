@@ -56,3 +56,7 @@
 * profile.hbs // Fitbit API integration. Requires login into fitbit. Displays fitbit data pertinent to the fitty applications use.
 * login.hbs // User login, required to save account information(I.E points)
 * register.hbs // User registration, required to create an account for the application.
+
+
+####Final Video Link
+*https://drive.google.com/file/d/14str0wOZ29NWo1yqBQb_-j-J-vwt0nv7/view?usp=sharing
