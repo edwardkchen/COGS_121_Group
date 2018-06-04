@@ -35,8 +35,9 @@ Source Code
 app.js //Server setup, handlebar integration
 
 ### models
-* goal.js // Connecting goal information to mongodb
-* user.js // Connecting user account information to mongodb 
+* user.js // Connecting user account to mongodb
+* goal.js // Connecting goal information to user accounts on mongodb
+* item.js // Connecting points to user accounts on mongodb
 
 ### public/css
 * home.css // UI formatting
