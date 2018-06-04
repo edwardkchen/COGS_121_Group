@@ -6,6 +6,7 @@ var GoalSchema = new mongoose.Schema({
     amount: Number,
     isBurn: Boolean,
     isWalk: Boolean,
+    isDone: Boolean,
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"

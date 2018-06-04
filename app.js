@@ -206,6 +206,35 @@ app.post('/pet/feed', (req, res) => {
   });
 });
 
+app.get('/complete/:id', (req, res) => {
+  const event_id = req.params.id;
+  var amount = 0;
+  Goal.findById(event_id, (error, foundGoal) => {
+    if(error) {
+      console.log(error);
+      return res.redirect("/back");
+    } else {
+      foundGoal.isDone = true;
+      foundGoal.save();
+      if(foundGoal.isBurn) {
+        amount = 200;
+      } else {
+        amount = 150;
+      }
+    }
+  });
+  User.findById(req.user._id, (error, foundUser) => {
+    if(error) {
+      console.log("error");
+      return res.rediect('back');
+    } else {
+      foundUser.total_points += amount;
+      foundUser.save();
+      return res.redirect('/goals');
+    }
+  })
+});
+
 //logout route
 app.get('/logout', (req, res) => {
   req.logout();

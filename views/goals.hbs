@@ -34,15 +34,33 @@
 					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
 				</div>
 			</div>
+			<div class="center-align goal-page-point">
+				Your points {{currentUser.total_points}}
+			</div>
 	    <h3>Goals</h3>
-
 			<ul id="goalsList" class="collection">
 				{{#each goals}}
 					{{#if isWalk}}
-						<li class="collection-item">Walk {{amount}} steps by {{date}}</li>
+						{{#if isDone}}
+								<li class="collection-item" style="color:green">
+									Walk {{amount}} steps by {{date}}
+								</li>
+						{{else}}
+							<li class="collection-item" style="color:red">
+								Walk {{amount}} steps by {{date}}
+								<a class="btn waves-effect waves-light btn-small" id="done" href="/complete/{{this._id}}">Done</a>
+							</li>
+						{{/if}}
 					{{/if}}
 					{{#if isBurn}}
-						<li class="collection-item">Burn {{amount}} calories by {{date}}</li>
+						{{#if isDone}}
+								<li class="collection-item" style="color:green">Burn {{amount}} calories by {{date}}</li>
+						{{else}}
+								<li class="collection-item" style="color:red">
+									Burn {{amount}} calories by {{date}}
+									<a class="btn waves-effect waves-light btn-small" id="done" href="/complete/{{this._id}}">Done</a>
+								</li>
+						{{/if}}
 					{{/if}}
 				{{/each}}
 			</ul>
