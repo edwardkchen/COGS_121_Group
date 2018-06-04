@@ -2,13 +2,24 @@
 ### Team Members
 
 ##### Ateyib Ahmed
-* Did something
+* Server Set up
+* Backend Database Configuration
+* Hunger functionality 
+
 
 ##### Nathanyel Calero
-* Did something
+* Frontend UI development
+* Fitbit API integration
+* Profile information display
+*
 
 ##### Edward Chen
-* Did something
+* Frontend UI development
+* Skeleton mapping
+* Help modals, Minor Javascript 
 
 ##### Siyuan Gao
-* Did something
+* Frontend UI development
+* Icon selection
+* Theme CSS consistency
+
