@@ -1,9 +1,16 @@
+/* Implementation Notes
+  This javascript file makes ajax calls to the Fitbit API to retrieve user
+  information. It uses the C3 Javascript library to produce line graphs that
+  to show the user's progress for the week.
+*/
 /*jshint esversion: 6*/
 $(document).ready(() => {
   var URL;
   var ACCESS_TOKEN;
   var USER_ID;
 
+  // Checks if the user ACCESS_TOKEN is in the URL, if not, it will redirect
+  // to the Fitbit API.
   if (!window.location.hash) {
     //var r = confirm('Connect to Fitbit.com?\n' +
     //  'Click OK to continue\nCancel to go back to home page.');
@@ -13,14 +20,12 @@ $(document).ready(() => {
       window.location.replace('/home');
     }
   } else {
+    // Parse the URL
     URL = window.location.href;
     ACCESS_TOKEN = URL.split('#')[1].split('=')[1].split('&')[0];
     USER_ID = URL.split('#')[1].split('=')[2].split('&')[0];
-    /*
-    $.post('/token', {
-      token: ACCESS_TOKEN,
-    });
-    */
+
+    // Get User Profile information from the Fitbit API
     $.ajax({
       url: 'https://api.fitbit.com/1/user/' + USER_ID + '/profile.json',
       type: 'GET',
@@ -34,6 +39,7 @@ $(document).ready(() => {
       },
     });
 
+    // Generate line chart for steps for the past week
     var chart1 = c3.generate({
       bindto: '#chart1',
       padding: {
@@ -59,6 +65,7 @@ $(document).ready(() => {
       },
     });
 
+    // Get user step information from the Fitbit API
     $.ajax({
       url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1w.json',
       type: 'GET',
@@ -82,6 +89,7 @@ $(document).ready(() => {
       },
     });
 
+    // Generate line chart for calories for the past week
     var chart2 = c3.generate({
       bindto: '#chart2',
       padding: {
@@ -107,6 +115,7 @@ $(document).ready(() => {
       },
     });
 
+    // Get user calories burned information from the Fitbit API
     $.ajax({
       url: 'https://api.fitbit.com/1/user/-/activities/calories/date/today/1w.json',
       type: 'GET',

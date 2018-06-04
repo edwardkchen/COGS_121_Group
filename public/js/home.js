@@ -1,3 +1,6 @@
+/* Implementation Notes
+  Makes an ajax call to our backend to load an image of the user's current pet
+*/
 /*jshint esversion: 6*/
 $(document).ready(() => {
   $.ajax({

@@ -1,3 +1,6 @@
+/* Implementation Notes
+  Uses basic Javascript function to fill the hunger bar for our pet.
+*/
 /*jshint esversion: 6*/
 
 // $(document).ready(() => {

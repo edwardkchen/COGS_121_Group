@@ -1,3 +1,6 @@
+/* Implementation Notes
+
+*/
 /*jshint esversion: 6*/
 const express = require('express');
 const path = require('path');
@@ -110,6 +113,7 @@ app.get('/home', (req, res) => {
   res.render('home');
 });
 
+// Redriect to the Fitbit API authorization page
 app.get('/connect', (req, res) => {
   res.redirect(encoded);
 });
