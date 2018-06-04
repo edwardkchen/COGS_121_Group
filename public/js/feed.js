@@ -1,7 +1,10 @@
 /* Implementation Notes
   Uses basic Javascript function to fill the hunger bar for our pet.
+  Makes an ajax call to the users database to subtract points
 */
 /*jshint esversion: 6*/
+
+// lowest costed item, feeds the least amount
 function feedPopsicle() {
   const points = Number($('#points').val());
   console.log(points);
@@ -26,7 +29,7 @@ function feedPopsicle() {
   }
 };
 
-//lowest costed item, feeds the least amount
+//2nd to lowest costed item, feeds more than the popsicle
 
 function feedBurger() {
   const points = Number($('#points').val());
@@ -52,7 +55,7 @@ function feedBurger() {
   }
 };
 
-//Second lowest cost item, feeds a bit more than the burger
+//Middle cost item, feeds a bit more than the popsicle and burger
 
 function feedChicken() {
   const points = Number($('#points').val());
@@ -78,7 +81,7 @@ function feedChicken() {
   }
 };
 
-// 2nd highest cost item, feeds more than the previous two items.
+// 2nd highest cost item, feeds more than the previous three items.
 function feedCorn() {
   const points = Number($('#points').val());
   console.log(points);

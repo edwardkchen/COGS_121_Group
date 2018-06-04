@@ -1,3 +1,8 @@
+/* Implementation Notes
+  Uses basic Javascript function to create dated goals.
+  Makes an ajax call to the users database to post and get goals
+*/
+
 $(document).ready(function(){
   $('select').formSelect();
 });
