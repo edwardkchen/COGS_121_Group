@@ -41,19 +41,22 @@
       </div>
       <div class="container">
         <div class="row center">
-          <div class="col s12">
-            <img id="petImg" class="responsive-img" alt=""></img>
-          </div>
+
           <div class="col s12">
             <h5>Hunger</h5>
             <progress id="Hunger" value="{{currentUser.hunger}}" max="5000"></progress>
-            <h4 id="totalPoints">Total Points: {{currentUser.total_points}}</h4>
+            <h6 id="totalPoints">Total Points: {{currentUser.total_points}}</h6>
             <input type="hidden" id="points" value="{{currentUser.total_points}}">
           </div>
+
+          <div class="col s12">
+            <img id="petImg" class="responsive-img" alt=""></img>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="shopping-items white-text">
+    <div class="shopping-items">
       <div class="item">
         <div class="points center-align">
           100 pts
