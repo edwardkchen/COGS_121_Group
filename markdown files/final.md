@@ -6,8 +6,8 @@
 * Backend Database Configuration
 * Server Set up
 * Home functionality
-* Goal functionality
-* Hunger functionality 
+* Goal functionality, interaction between database and frontend
+* Hunger functionality, interaction between database and frontend 
 
 
 ##### Nathanyel Calero
