@@ -12,6 +12,7 @@ const passport = require('passport');
 const LocalStrategy  = require('passport-local').Strategy;
 const expressSession = require('express-session');
 const User = require('./models/user');
+const Goal = require('./models/goal');
 
 const app = express();
 
@@ -135,7 +136,34 @@ app.get('/friends', (req, res) => {
 
 app.get('/goals', (req, res) => {
   console.log('Running into goals page!');
-  res.render('goals');
+  Goal.find({ user_id: req.user._id}, (error, allGoals) => {
+    if(error) {
+      console.log(error);
+    } else {
+      console.log(allGoals);
+        res.render('goals', {goals: allGoals});
+    }
+  });
+});
+
+app.post('/goals', (req, res) => {
+  console.log(req.body.goal);
+  const newGoal = req.body.goal;
+  if (newGoal.type == "burn") {
+    newGoal.isBurn = true;
+  } else {
+    newGoal.isWalk = true;
+  }
+  newGoal.user_id = req.user._id;
+  console.log("id = " + req.user._id);
+  Goal.create(newGoal, (error, newGoal) => {
+    if(error) {
+      console.log(error);
+      return res.send("Error occured");
+    } else {
+      return res.redirect('/goals');
+    }
+  })
 });
 
 app.get('/profile', (req, res) => {

@@ -33,6 +33,16 @@ body {
   margin-bottom: 15px;
 }
 
+.btn-floating {
+  position: fixed;
+  right: 0;
+  bottom: 100px;
+}
+
+#goals-form {
+  display: none;
+}
+
 #petName {
   margin-top: 0;
   margin-bottom: 0;
