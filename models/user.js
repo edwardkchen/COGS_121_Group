@@ -1,3 +1,6 @@
+/* Implementation Notes
+  Uses ajax call to create an account in the mongodbdatabase. Each user is given a starting point value of 2500
+  */
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 

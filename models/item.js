@@ -1,3 +1,6 @@
+/* Create an ajax call for shop items to interact with database points for accounts
+*/
+
 var mongoose = require('mongoose');
 
 var ItemSchema = new mongoose.Schema({
