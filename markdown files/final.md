@@ -2,15 +2,19 @@
 ### Team Members
 
 ##### Ateyib Ahmed
-* Server Set up
+* Frontend UI development
 * Backend Database Configuration
+* Server Set up
+* Home functionality
+* Goal functionality
 * Hunger functionality 
 
 
 ##### Nathanyel Calero
 * Frontend UI development
-* Fitbit API integration
-* Profile information display
+* Backend Fitbit API integration
+* Home functionality
+* Profile Functionality, implemented visual data display
 *
 
 ##### Edward Chen

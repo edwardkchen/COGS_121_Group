@@ -26,30 +26,7 @@ function feedPopsicle() {
   }
 };
 
-function feedCupcake() {
-  const points = Number($('#points').val());
-  console.log(points);
-  if (points >= 75 && parseInt($('#Hunger').val()) < 5000) {
-    $.ajax({
-      url: '/pet/feed',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-        added_point: 75,
-      },
-      success: (data) => {
-        console.log(data);
-        $('#totalPoints').text("Total points: " + data.total_points);
-        $('#Hunger').val(Number(data.hunger));
-        $('#points').val(Number(data.total_points));
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
-};
-
+//lowest costed item, feeds the least amount
 function feedBurger() {
   const points = Number($('#points').val());
   console.log(points);
@@ -73,6 +50,8 @@ function feedBurger() {
     });
   }
 };
+
+//Second lowest cost item, feeds a bit more than the burger
 
 function feedChicken() {
   const points = Number($('#points').val());
@@ -98,6 +77,7 @@ function feedChicken() {
   }
 };
 
+// 2nd highest cost item, feeds more than the previous two items.
 function feedCorn() {
   const points = Number($('#points').val());
   console.log(points);
@@ -122,6 +102,7 @@ function feedCorn() {
   }
 };
 
+// highest cost item, feeds the most
 function feedGrapes() {
   const points = Number($('#points').val());
   console.log(points);
