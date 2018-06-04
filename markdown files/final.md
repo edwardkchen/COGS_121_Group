@@ -15,7 +15,6 @@
 * Backend Fitbit API integration
 * Home functionality
 * Profile Functionality, implemented visual data display
-*
 
 ##### Edward Chen
 * Frontend UI development
@@ -27,12 +26,9 @@
 * Icon selection
 * Theme CSS consistency
 
+##Source Code
 
-
-
-Source Code
-
-app.js //Server setup, handlebar integration
+### app.js //Server setup, handlebar integration
 
 ### ./models
 * user.js // Connecting user account to mongodb
