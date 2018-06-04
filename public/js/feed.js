@@ -26,6 +26,8 @@ function feedPopsicle() {
   }
 };
 
+//lowest costed item, feeds the least amount
+
 function feedBurger() {
   const points = Number($('#points').val());
   console.log(points);
@@ -49,6 +51,8 @@ function feedBurger() {
     });
   }
 };
+
+//Second lowest cost item, feeds a bit more than the burger
 
 function feedChicken() {
   const points = Number($('#points').val());
@@ -74,6 +78,7 @@ function feedChicken() {
   }
 };
 
+// 2nd highest cost item, feeds more than the previous two items.
 function feedCorn() {
   const points = Number($('#points').val());
   console.log(points);
@@ -98,6 +103,7 @@ function feedCorn() {
   }
 };
 
+// highest cost item, feeds the most 
 function feedGrapes() {
   const points = Number($('#points').val());
   console.log(points);
