@@ -134,11 +134,6 @@ app.get('/goals', (req, res) => {
   res.render('goals');
 });
 
-app.get('/help', (req, res) => {
-  console.log('Running into goals page!');
-  res.render('help');
-});
-
 app.get('/profile', (req, res) => {
   console.log('Running into profile page!');
   if (!req.session.loggedIn) {
