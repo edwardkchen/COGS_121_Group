@@ -1,3 +1,6 @@
+/* Create an ajax call to the database for user account goals.
+Saves date and amount of steps and calories in the database
+*/
 var mongoose = require('mongoose');
 
 var GoalSchema = new mongoose.Schema({
