@@ -11,51 +11,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
     <link href="/css/home.css" rel="stylesheet">
     <title>Home</title>
   </head>
   <body class="home">
     <div class="navbar-fixed">
-      <nav class="transparent">
-        <div class="nav-wrapper grey lighten-4">
-          <a href="#" class="brand-logo center grey-text">PetsApp</a>
+      <nav class="grey lighten-4">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center grey-text">Fitty</a>
           <ul id="nav-mobile" class="left">
             <li><a class="grey-text" href="/logout">Logout</a></li>
           </ul>
           <ul id="nav-mobile" class="right">
-          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Help</a>
-              <div id="modal1" class="modal">
-                <div class="modal-content">
-                 <span class="blue-text text-darken-4"> 
-                  <h4>Home Help</h4>
-                <span class="amber-text text-accent-3"> 
-                  <p>Hello! Welcome to the home screen. Here, you can taka care of your cat. First, gain points from staying healthy by accumulating steps and burning calories! Then, use those points to buy food to keep the kitty from starving! The more expensive food items will provide more food. If you're running out of points you are encouraged to work out more!</p>
-                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
-    </div>
-  </div>
-
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Help</a>
           </ul>
         </div>
       </nav>
     </div>  <!-- End navbar -->
     <div class="main-content">
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4 class="grey-text darken-2">Help</h4>
+          <p class="grey-text">Welcome! This is the home screen. Here, you can taka care of your pet. First, gain points from staying healthy by accumulating steps and burning calories! Then, use those points to buy food to keep the kitty from starving! The more expensive food items will provide more food. If you're running out of points you are encouraged to work out more!</p>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="row center">
           <div class="col s12">
             <img id="petImg" class="responsive-img" alt=""></img>
           </div>
           <div class="col s12">
-            <h4>Hunger</h4>
+            <h5>Hunger</h5>
             <progress id="Hunger" value="{{currentUser.hunger}}" max="5000"></progress>
-            <h5 id="totalPoints">Total Points: {{currentUser.total_points}}</h5>
-            <input type="hidden" id="points" value="{{currentUser.total_points}}"
-            {{currentUser.hunger}}
-        </div>
+            <h4 id="totalPoints">Total Points: {{currentUser.total_points}}</h4>
+            <input type="hidden" id="points" value="{{currentUser.total_points}}">
+          </div>
         </div>
       </div>
     </div>
-    <div class="shopping-items grey">
+    <div class="shopping-items white-text">
       <div class="item">
         <div class="points center-align">
           100 pts

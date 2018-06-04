@@ -1,13 +1,15 @@
 /* Implementation Notes
   CSS styling for our application
 */
+html {
+  font-family: 'Dekko', cursive !important;
+}
+
 body {
   background-image: url("/imgs/paws-bg.jpg");
   background-repeat: repeat;
-  background-position: top center;
   margin-bottom: 100px;
 }
-
 
 .icons {
   max-width: 8vh;
@@ -31,12 +33,6 @@ body {
   margin-bottom: 15px;
 }
 
-.card {
-  margin: 0 auto 0 auto;
-  max-width: 35rem;
-  background: none;
-}
-
 #petName {
   margin-top: 0;
   margin-bottom: 0;
@@ -47,6 +43,7 @@ body {
   z-index: 1000;
   bottom: 0;
   width: 100%;
+  background-color: rgba(255,255,255,0.4) !important;
 }
 
 .header-icons {
@@ -76,6 +73,7 @@ body {
   overflow-y: hidden;
   white-space: nowrap;
   padding: 20px 0 20px;
+  background-color: rgba(0,0,0,0.4) !important;
 }
 
 .shopping-items .item {
@@ -114,10 +112,33 @@ body {
   left: 0;
   margin: auto;
   padding: 20px;
+  border-radius: 40px;
+  background-color: rgba(255,255,255,0.4);
+}
+
+nav {
+  background-color: rgba(255,255,255,0.4) !important;
+}
+
+.input-field {
+  padding: 1px;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #ff974a !important;
+  box-shadow: 0 1px 0 0 #ff974a !important;
+}
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #ff974a !important;
+  box-shadow: 0 1px 0 0 #ff974a !important;
 }
 
 #loginButton {
   margin-right: 20px;
+  border-radius: 20px;
+  font-family: inherit;
+  background-color: #ff974a !important;
 }
 
 .valign-wrapper {
@@ -128,6 +149,18 @@ body {
 
 .food {
   max-height: 70px;
+}
+
+.feed-btn {
+  border-radius: 20px;
+  font-family: inherit;
+  background-color: #ff974a !important;
+}
+
+.modal-trigger {
+  border-radius: 20px;
+  font-family: inherit;
+  background-color: #ff974a !important;
 }
 
 #Hunger {
