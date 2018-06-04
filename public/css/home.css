@@ -177,3 +177,8 @@ nav {
   width: 75%;
   background-color: #000;
 }
+
+progress::-webkit-progress-bar {
+  background: #F2F2F2;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+}
