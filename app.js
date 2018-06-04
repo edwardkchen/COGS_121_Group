@@ -163,6 +163,9 @@ app.post('/pet/feed', (req, res) => {
     if(error) {
       console.log(error);
     } else {
+      if(foundUser.total_points < parseInt(added_point)) {
+        res.send({ total_points: foundUser.total_points, hunger: foundUser.hunger });
+      }
       foundUser.total_points -= Number(added_points);
       foundUser.hunger += Number(added_points);
       foundUser.save();
