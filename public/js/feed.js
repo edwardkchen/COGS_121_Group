@@ -4,7 +4,7 @@
 */
 /*jshint esversion: 6*/
 
-// lowest costed item, feeds the least amount
+// lowest cost item, feeds the least amount
 function feedPopsicle() {
   const points = Number($('#points').val());
   console.log(points);
@@ -29,7 +29,7 @@ function feedPopsicle() {
   }
 };
 
-//2nd to lowest costed item, feeds more than the popsicle
+//2nd to lowest cost item, feeds more than the popsicle
 function feedCupcake() {
   const points = Number($('#points').val());
   console.log(points);
@@ -104,7 +104,7 @@ function feedChicken() {
   }
 };
 
-// 2nd highest cost item, feeds more than the previous three items.
+// 3rd highest cost item, feeds more than the previous four items.
 function feedCorn() {
   const points = Number($('#points').val());
   console.log(points);
