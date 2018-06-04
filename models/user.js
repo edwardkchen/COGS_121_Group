@@ -8,6 +8,10 @@ var UserSchema = new mongoose.Schema({
       type: Number,
       default: 0,
     },
+    hunger: {
+      type: Number,
+      default: 2500,
+    },
     token: String,
   });
 

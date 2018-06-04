@@ -2,41 +2,105 @@
   Uses basic Javascript function to fill the hunger bar for our pet.
 */
 /*jshint esversion: 6*/
-var points;
 
-$(document).ready(() => {
-  points = 5000;
-  document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
-});
+// $(document).ready(() => {
+//   points = 5000;
+//   document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+// });
+
 
 function feedBurger() {
-  if (points >= 100 & document.getElementById('Hunger').value < 100) {
-    document.getElementById('Hunger').value += 5;
-    points -= 100;
-    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  const points = Number($('#points').val());
+  console.log(points);
+  if (points >= 100 && parseInt($('#Hunger').val()) < 5000) {
+    $.ajax({
+      url: '/pet/feed',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        added_point: 100,
+      },
+      success: (data) => {
+        console.log(data);
+        $('#totalPoints').text("Total points: " + data.total_points);
+        $('#Hunger').val(Number(data.hunger));
+        $('#points').val(Number(data.total_points));
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
-}
+};
 
 function feedChicken() {
-  if (points >= 200 & document.getElementById('Hunger').value < 100) {
-    document.getElementById('Hunger').value += 10;
-    points -= 200;
-    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  const points = Number($('#points').val());
+  console.log(points);
+  if (points >= 200 && parseInt($('#Hunger').val()) < 5000) {
+    $.ajax({
+      url: '/pet/feed',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        added_point: 200,
+      },
+      success: (data) => {
+        console.log(data);
+        $('#totalPoints').text("Total points: " + data.total_points);
+        $('#Hunger').val(Number(data.hunger));
+        $('#points').val(Number(data.total_points));
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
-}
+};
 
 function feedCorn() {
-  if (points >= 300 & document.getElementById('Hunger').value < 100) {
-    document.getElementById('Hunger').value += 15;
-    points -= 300;
-    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  const points = Number($('#points').val());
+  console.log(points);
+  if (points >= 300 && parseInt($('#Hunger').val()) < 5000) {
+    $.ajax({
+      url: '/pet/feed',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        added_point: 300,
+      },
+      success: (data) => {
+        console.log(data);
+        $('#totalPoints').text("Total points: " + data.total_points);
+        $('#Hunger').val(Number(data.hunger));
+        $('#points').val(Number(data.total_points));
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
-}
+};
 
 function feedGrapes() {
-  if (points >= 400 & document.getElementById('Hunger').value < 100) {
-    document.getElementById('Hunger').value += 25;
-    points -= 400;
-    document.getElementById('totalPoints').innerText = 'Total Points: ' + points;
+  const points = Number($('#points').val());
+  console.log(points);
+  if (points >= 400 && parseInt($('#Hunger').val()) < 5000) {
+    $.ajax({
+      url: '/pet/feed',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        added_point: 400,
+      },
+      success: (data) => {
+        console.log(data);
+        $('#totalPoints').text("Total points: " + data.total_points);
+        $('#Hunger').val(Number(data.hunger));
+        $('#points').val(Number(data.total_points));
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
-}
+};

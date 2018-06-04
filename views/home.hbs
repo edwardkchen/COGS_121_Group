@@ -36,9 +36,11 @@
           </div>
           <div class="col s12">
             <h4>Hunger</h4>
-            <progress id="Hunger" value="5" max="100"></progress>
-            <h5 id="totalPoints">Total Points: 5000</h5>
-          </div>
+            <progress id="Hunger" value="{{currentUser.hunger}}" max="5000"></progress>
+            <h5 id="totalPoints">Total Points: {{currentUser.total_points}}</h5>
+            <input type="hidden" id="points" value="{{currentUser.total_points}}"
+            {{currentUser.hunger}}
+        </div>
         </div>
       </div>
     </div>
@@ -116,6 +118,7 @@
       </div>
     </footer>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="js/feed.js" charset="utf-8"></script>
     <script src="js/home.js" charset="utf-8"></script>
