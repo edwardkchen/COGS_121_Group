@@ -1,3 +1,9 @@
+<!-- Implementation Notes
+  The home page implements basic HTML, CSS and Javascript. Our javascript
+  implementation consists of ajax calls to our back end to check that our user
+  has enough points to feed our pet, and that our pet is hungry enough to feed.
+  Our javascript fills the hunger bar and changes the total points the user has.
+-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -36,7 +42,6 @@
         </div>
       </div>
     </div>
-
     <div class="shopping-items grey">
       <div class="item">
         <div class="points center-align">
@@ -83,7 +88,6 @@
         </div>
       </div>
     </div>
-
     <footer class="page-footer grey lighten-4">
       <div class="container">
         <div class="row">
@@ -114,18 +118,6 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="js/feed.js" charset="utf-8"></script>
-    <script>
-      $(document).ready(() => {
-        $.ajax({
-          url: '/users/John',
-          type: 'get',
-          dataType: 'json',
-          success: (data) => {
-            $('#petImg').attr('src', data.img);
-            $('#petName').text(data.pet);
-          },
-        });
-      });
-    </script>
+    <script src="js/home.js" charset="utf-8"></script>
   </body>
 </html>
