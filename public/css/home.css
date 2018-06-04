@@ -39,7 +39,8 @@ body {
 }
 
 #petImg {
-  padding-top: 20vh;
+  padding-top: 7vh;
+  width: 200px;
 }
 
 .page-footer {
