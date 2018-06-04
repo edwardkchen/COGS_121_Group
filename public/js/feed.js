@@ -7,7 +7,6 @@
 // lowest cost item, feeds the least amount
 function feedPopsicle() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 50 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -17,7 +16,6 @@ function feedPopsicle() {
         added_point: 50,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -32,7 +30,6 @@ function feedPopsicle() {
 //2nd to lowest cost item, feeds more than the popsicle
 function feedCupcake() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 75 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -42,7 +39,6 @@ function feedCupcake() {
         added_point: 75,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -57,7 +53,6 @@ function feedCupcake() {
 //3rd lowest cost item
 function feedBurger() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 100 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -67,7 +62,6 @@ function feedBurger() {
         added_point: 100,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -82,7 +76,6 @@ function feedBurger() {
 //Middle cost item, feeds a bit more than the popsicle and burger
 function feedChicken() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 200 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -92,7 +85,6 @@ function feedChicken() {
         added_point: 200,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -107,7 +99,6 @@ function feedChicken() {
 // 3rd highest cost item, feeds more than the previous four items.
 function feedCorn() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 300 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -117,7 +108,6 @@ function feedCorn() {
         added_point: 300,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -132,7 +122,6 @@ function feedCorn() {
 // 2nd highest cost item
 function feedGrapes() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 400 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -142,7 +131,6 @@ function feedGrapes() {
         added_point: 400,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));
@@ -157,7 +145,6 @@ function feedGrapes() {
 // highest cost item, feeds the most
 function feedMeat() {
   const points = Number($('#points').val());
-  console.log(points);
   if (points >= 500 && parseInt($('#Hunger').val()) < 5000) {
     $.ajax({
       url: '/pet/feed',
@@ -167,7 +154,6 @@ function feedMeat() {
         added_point: 500,
       },
       success: (data) => {
-        console.log(data);
         $('#totalPoints').text("Total points: " + data.total_points);
         $('#Hunger').val(Number(data.hunger));
         $('#points').val(Number(data.total_points));

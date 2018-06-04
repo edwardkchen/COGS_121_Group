@@ -95,8 +95,6 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
   const newUser = new User({ username: req.body.username });
-  console.log(newUser);
-  console.log(req.body.password);
   User.register(newUser, req.body.password, (err, user) => {
     if (err) {
       console.log(err);
@@ -110,7 +108,6 @@ app.post('/register', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-  console.log('Running into home page!');
   res.render('home');
 });
 
@@ -130,24 +127,20 @@ app.get('/users/:username', (req, res) => {
 });
 
 app.get('/friends', (req, res) => {
-  console.log('Running into friends page!');
   res.render('friends');
 });
 
 app.get('/goals', (req, res) => {
-  console.log('Running into goals page!');
   Goal.find({ user_id: req.user._id}, (error, allGoals) => {
     if(error) {
       console.log(error);
     } else {
-      console.log(allGoals);
-        res.render('goals', {goals: allGoals});
+      res.render('goals', {goals: allGoals});
     }
   });
 });
 
 app.post('/goals', (req, res) => {
-  console.log(req.body.goal);
   const newGoal = req.body.goal;
   if (newGoal.type == "burn") {
     newGoal.isBurn = true;
@@ -155,7 +148,6 @@ app.post('/goals', (req, res) => {
     newGoal.isWalk = true;
   }
   newGoal.user_id = req.user._id;
-  console.log("id = " + req.user._id);
   Goal.create(newGoal, (error, newGoal) => {
     if(error) {
       console.log(error);
@@ -167,7 +159,6 @@ app.post('/goals', (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
-  console.log('Running into profile page!');
   if (!req.session.loggedIn) {
     return res.render('profile');
   } else {
@@ -189,7 +180,6 @@ app.post('/token', (req, res) => {
 });
 
 app.post('/pet/feed', (req, res) => {
-  console.log("Running into feeding");
   const added_points = req.body.added_point;
   User.findById(req.user._id, (error, foundUser) => {
     if(error) {
