@@ -41,60 +41,68 @@
       </div>
       <div class="container">
         <div class="row center">
-
           <div class="col s12">
             <h5>Hunger</h5>
             <progress id="Hunger" value="{{currentUser.hunger}}" max="5000"></progress>
             <h6 id="totalPoints">Total Points: {{currentUser.total_points}}</h6>
             <input type="hidden" id="points" value="{{currentUser.total_points}}">
           </div>
-
           <div class="col s12">
             <img id="petImg" class="responsive-img" alt=""></img>
           </div>
-
         </div>
       </div>
     </div>
     <div class="shopping-items">
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
+          50 pts
+        </div>
+        <div class="img">
+          <img src="/imgs/popsicle.png" class="responsive-img">
+        </div>
+        <div class="feed">
+          <button class="feed-btn btn waves-effect waves-light" onclick="feedPopsicle()">Feed</button>
+        </div>
+      </div>
+      <div class="item center">
+        <div class="points">
           100 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/burger.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedBurger()">Feed</button>
         </div>
       </div>
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
           200 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/chicken.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedChicken()">Feed</button>
         </div>
       </div>
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
           300 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/corn.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedCorn()">Feed</button>
         </div>
       </div>
-      <div class="item center-align">
+      <div class="item center">
         <div class="points">
           400 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/grape.png" class="responsive-img">
         </div>
         <div class="feed">
