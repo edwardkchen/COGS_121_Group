@@ -20,7 +20,7 @@ document.getElementById("goal").onchange=function() {
   console.log(this.value);
   if(this.value == "walk") {
     $('#secondInput').html("");
-    $('#secondInput').append('<input type="text" name="goal[amount]" placeholder="How many miles?">');
+    $('#secondInput').append('<input type="text" name="goal[amount]" placeholder="How many steps?">');
     $('#secondInput').append('<input type="text" class="datepicker" name="goal[date]" placeholder="Select a date">');
     $('#secondInput').append('<input type="hidden" name="goal[type]" value="walk">');
     $('#secondInput').append('<button class="waves-effect waves-light btn">Submit</button>');
