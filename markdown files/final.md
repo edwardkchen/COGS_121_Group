@@ -34,22 +34,23 @@ Source Code
 
 app.js //Server setup, handlebar integration
 
-### models
+### ./models
 * user.js // Connecting user account to mongodb
 * goal.js // Connecting goal information to user accounts on mongodb
 * item.js // Connecting points to user accounts on mongodb
 
-### public/css
+### ./public/css
 * home.css // UI formatting
 
-### public/js
+### ./public/js
 
 * feed.js // Hunger bar js onclick functionality
+* goals.js // Create goals js onclick functionality, Ajax calls to retrieve user account goals
 * home.js // Pet image
 * modal.js // Help modal onclick functionality
 * profile.js // Ajax call to retrieve weekly fitbit data
 
-### public/views
+### ./views
 
 * home.hbs //  Homescreen to display the apps core functionality, caring for the cat. Uses a hungerbar,point system and shop 
 * goals.hbs // Screen to create and display user goals for steps and calorie burning
