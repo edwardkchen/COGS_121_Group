@@ -156,6 +156,21 @@ app.post('/token', (req, res) => {
   });
 });
 
+app.post('/pet/feed', (req, res) => {
+  console.log("Running into feeding");
+  const added_points = req.body.added_point;
+  User.findById(req.user._id, (error, foundUser) => {
+    if(error) {
+      console.log(error);
+    } else {
+      foundUser.total_points -= Number(added_points);
+      foundUser.hunger += Number(added_points);
+      foundUser.save();
+      res.send({ total_points: foundUser.total_points, hunger: foundUser.hunger });
+    }
+  });
+});
+
 //logout route
 app.get('/logout', (req, res) => {
   req.logout();
