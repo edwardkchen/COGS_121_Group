@@ -32,8 +32,10 @@
     <div class="main-content">
       <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4 class="grey-text darken-2">Help</h4>
-          <p class="grey-text">Welcome! This is the home screen. Here, you can taka care of your pet. First, gain points from staying healthy by accumulating steps and burning calories! Then, use those points to buy food to keep the kitty from starving! The more expensive food items will provide more food. If you're running out of points you are encouraged to work out more!</p>
+          <h4 class="grey-text darken-2">Home Help</h4>
+          <p class="grey-text">Welcome to the home screen. Fitty believes that taking care of your cat will help you stay fit! Access the profile page to get started! You will be asked to link your fitbit account to track steps and calories. <div class="grey-text"> Gain points from staying fit by accumulating steps and burning calories. Then, use those points to buy food to keep the kitty from starving! The more expensive food items fill more of the hunger bar.</div> 
+          <div class="grey-text">Access the goals page to create step and calorie goals for yourself.</div>
+          </p>
           <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
           </div>
@@ -41,60 +43,68 @@
       </div>
       <div class="container">
         <div class="row center">
-
           <div class="col s12">
             <h5>Hunger</h5>
             <progress id="Hunger" value="{{currentUser.hunger}}" max="5000"></progress>
             <h6 id="totalPoints">Total Points: {{currentUser.total_points}}</h6>
             <input type="hidden" id="points" value="{{currentUser.total_points}}">
           </div>
-
           <div class="col s12">
             <img id="petImg" class="responsive-img" alt=""></img>
           </div>
-
         </div>
       </div>
     </div>
     <div class="shopping-items">
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
+          50 pts
+        </div>
+        <div class="img">
+          <img src="/imgs/popsicle.png" class="responsive-img">
+        </div>
+        <div class="feed">
+          <button class="feed-btn btn waves-effect waves-light" onclick="feedPopsicle()">Feed</button>
+        </div>
+      </div>
+      <div class="item center">
+        <div class="points">
           100 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/burger.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedBurger()">Feed</button>
         </div>
       </div>
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
           200 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/chicken.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedChicken()">Feed</button>
         </div>
       </div>
-      <div class="item">
-        <div class="points center-align">
+      <div class="item center">
+        <div class="points">
           300 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/corn.png" class="responsive-img">
         </div>
         <div class="feed">
           <button class="feed-btn btn waves-effect waves-light" onclick="feedCorn()">Feed</button>
         </div>
       </div>
-      <div class="item center-align">
+      <div class="item center">
         <div class="points">
           400 pts
         </div>
-        <div class="img center-align">
+        <div class="img">
           <img src="/imgs/grape.png" class="responsive-img">
         </div>
         <div class="feed">
